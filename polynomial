@@ -1,18 +1,18 @@
 #include<iostream>
 using namespace std;
 int main() {
-	float A, B, C, t, dt, num, anal;
+	double A, B, C, t, dt, num, anal;
 	//differentiation
 	cout << "Enter A B C"<<endl;
 	cin >> A >> B >> C;
-	cout << "Endter t dt" << endl;
+	cout << "Enter t dt" << endl;
 	cin >> t >> dt;
 	anal = 2 * A * t + B;
 	num = (((A * (t + dt) * (t + dt)) + B * (t + dt) + C) - (A * t * t + B * t + C) )/ dt;
 	cout << "num : " << num << ", anal : " << anal << endl;
 	cout << "error=" << (num - anal) / anal * 100 << "%\n";
 	//integration
-	float a, b;
+	double a, b;
 	int N;
 	cout << "Enter a b"<<endl;
 	cin >> a >> b;
