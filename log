@@ -21,8 +21,8 @@ void main() {
 	anal = A * d*(log(a * d) / log(b)) - (A * d) / log(b) - A * c*(log(a * c) / log(b)) + (A * c) / log(b);
 	dt = (d - c) / N;
 	num = 0;
-	for (int y = 0; y < N; y++) {
-		num += A*(log(a*(c + dt * y)) / log(b)) * dt;
+	for (int i = 0; i < N; i++) {
+		num += A*(log(a*(c + dt * i)) / log(b)) * dt;
 	}
 	cout << "num" << num << "anal" << anal << endl;
 	cout << "error=" << (num - anal) / anal * 100 << "%" << endl;
