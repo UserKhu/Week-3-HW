@@ -3,27 +3,27 @@ using namespace std;
 int main() {
 	float A, B, C, t, dt, num, anal;
 	//differentiation
-	cout << "Enter A B C";
-	cin >> A >> B >>C;
-	cout << "Endter t dt";
+	cout << "Enter A B C"<<endl;
+	cin >> A >> B >> C;
+	cout << "Endter t dt" << endl;
 	cin >> t >> dt;
-	anal = 2 * A * t + A;
-	num = ((A * (t+dt)*(t+dt)) + B*(t+dt)+C)-(A*t*t+B*t+C))/dt;
-	cout << "num" << num << "anal" << anal << endl;
+	anal = 2 * A * t + B;
+	num = (((A * (t + dt) * (t + dt)) + B * (t + dt) + C) - (A * t * t + B * t + C) )/ dt;
+	cout << "num : " << num << ", anal : " << anal << endl;
 	cout << "error=" << (num - anal) / anal * 100 << "%\n";
 	//integration
 	float a, b;
 	int N;
-	cout << "Enter a b N";
-	cin >> a >> b >> N;
+	cout << "Enter a b"<<endl;
+	cin >> a >> b;
+	cout << "Enter N" << endl;
+	cin >> N;
 	anal = A * (pow(b, 3) - pow(a, 3)) / 3 + B * (pow(b, 2) - pow(a, 2)) / 2 + C * (b - a);
-	dx = (b - a) / N;
+	dt = (b - a) / N;
 	num = 0;
-	for (int i = 0; i < N;i++) {
-		num += A * pow(a + dt * i, 2) * dx + B * (a + dt * i) * dt + C * dt;
+	for (int i = 0; i < N; i++) {
+		num +=( A * pow(a + dt * i, 2) * dt + B * (a + dt * i) * dt + C * dt);
 	}
-	cout << "num" << num << "anal" << anal << endl;
-	cout << "error = " << (num - anal) / anal * 100 << "%\n";
-
-
+	cout << "num : " << num << ", anal : " << anal << endl;
+	cout << "error = " << (num - anal) / anal * 100 << "%\n"<<endl;
 }
