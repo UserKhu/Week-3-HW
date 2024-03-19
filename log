@@ -3,11 +3,11 @@ using namespace std;
 void main() {
 	float b, a, A, dt, t, num, anal;
 	//differentiation
-	cout << "b?=" << endl;
+	cout << "Enter b" << endl;
 	cin >> b;
-	cout << "a A?=" << endl;
+	cout << "Enter a A" << endl;
 	cin >> a >> A;
-	cout << "t dt?=" << endl;
+	cout << "Enter t dt" << endl;
 	cin >> t >> dt;
 	anal = A / (t * log(b));
 	num = A * ((log(a * (t + dt)) / log(b)) - (log(a * t) / log(b))) / dt;
@@ -16,7 +16,7 @@ void main() {
 	float c, d;
 	//intergration
 	int N;
-	cout << "c d N = " << endl;
+	cout << "Endter c d N" << endl;
 	cin >> c >> d >> N;
 	anal = A * d*(log(a * d) / log(b)) - (A * d) / log(b) - A * c*(log(a * c) / log(b)) + (A * c) / log(b);
 	dt = (d - c) / N;
